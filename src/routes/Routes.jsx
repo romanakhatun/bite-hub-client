@@ -28,14 +28,14 @@ export const router = createBrowserRouter([
           // </ProtectedRoute>
         ),
       },
-      // {
-      //   path: "/my-reviews",
-      //   element: (
-      //     <ProtectedRoute>
-      //       <MyReviews />
-      //     </ProtectedRoute>
-      //   ),
-      // },
+      {
+        path: "/my-reviews",
+        element: (
+          // <ProtectedRoute>
+          <MyReviews />
+          // </ProtectedRoute>
+        ),
+      },
       // {
       //   path: "/edit-review/:id",
       //   element: (
@@ -57,8 +57,8 @@ export const router = createBrowserRouter([
       { path: "/register", element: <Register /> },
     ],
   },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
+  // {
+  //   path: "*",
+  //   element: <NotFound />,
+  // },
 ]);
