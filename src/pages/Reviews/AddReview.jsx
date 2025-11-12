@@ -8,11 +8,12 @@ import useMessage from "../../hooks/useMessage";
 import AlertMessage from "../../components/AlertMessage";
 
 const AddReview = () => {
-  const { error, success, showError, showSuccess } = useMessage();
   const [rating, setRating] = useState(0);
+  const { error, success, showError, showSuccess } = useMessage();
   const { user } = useAuth();
   const axiosInstance = useAxios();
 
+  // Create a Review
   const handleSubmitReview = (e) => {
     e.preventDefault();
 
@@ -20,7 +21,6 @@ const AddReview = () => {
     const foodImage = e.target.foodImage.value;
     const restaurantName = e.target.restaurantName.value;
     const location = e.target.location.value;
-    const rating = e.target.rating.value;
     const reviewText = e.target.reviewText.value;
 
     // console.log(
@@ -42,6 +42,7 @@ const AddReview = () => {
       rating,
       reviewText,
       email: user?.email,
+      reviewer: user?.displayName,
       submissionDate: new Date(),
     };
 

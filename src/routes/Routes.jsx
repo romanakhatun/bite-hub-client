@@ -19,7 +19,12 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/all-reviews", element: <AllReviews /> },
-      { path: "/review/:id", element: <ReviewDetails /> },
+      {
+        path: "/review/:id",
+        element: <ReviewDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/reviews/${params.id}`),
+      },
       {
         path: "/add-review",
         element: (

@@ -1,20 +1,5 @@
 import { Link } from "react-router";
-import { FaStar } from "react-icons/fa";
-
-// Helper to render stars
-const StarRating = ({ rating }) => {
-  const fullStars = Math.floor(rating);
-  const stars = [];
-  for (let i = 0; i < 5; i++) {
-    stars.push(
-      <FaStar
-        key={i}
-        className={i < fullStars ? "text-yellow-500" : "text-gray-300"}
-      />
-    );
-  }
-  return <div className="flex text-sm gap-0.5">{stars}</div>;
-};
+import { StarRating } from "./StarRating";
 
 const ReviewCard = ({ review }) => {
   return (
@@ -22,7 +7,7 @@ const ReviewCard = ({ review }) => {
       <div className="mx-auto w-full max-w-[200px] mb-6">
         <div className="relative overflow-hidden aspect-square border-[7px] border-[#dfdfdf]">
           <img
-            src={review.image}
+            src={review.foodImage}
             alt={review.foodName}
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -34,7 +19,7 @@ const ReviewCard = ({ review }) => {
       </h3>
 
       <p className="text-sm text-gray-500 font-semibold mb-1">
-        {review.restaurant} &bull; {review.location}
+        {review.restaurantName} &bull; {review.location}
       </p>
 
       <p className="text-xs text-primary mb-3 italic">
@@ -46,7 +31,7 @@ const ReviewCard = ({ review }) => {
       </div>
 
       <Link
-        to={`/reviews/${review.id}`}
+        to={`/review/${review._id}`}
         className="btn-primary border border-primary px-6 py-2"
       >
         View Details
