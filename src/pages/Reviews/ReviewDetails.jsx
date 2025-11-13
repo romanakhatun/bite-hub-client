@@ -76,7 +76,7 @@ const ReviewDetails = () => {
             </p>
 
             <Link
-              to={`/edit-review/${review.id}`}
+              to={`/edit-review/${review._id}`}
               className="btn-primary px-5 py-2 "
             >
               Edit This Review

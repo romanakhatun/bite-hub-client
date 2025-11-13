@@ -1,5 +1,3 @@
-import React from "react";
-
 const FormInput = ({
   label,
   type,
@@ -7,7 +5,11 @@ const FormInput = ({
   placeholder,
   required,
   isRequired = true,
+  value,
+  handleChange,
 }) => {
+  console.log(value);
+
   return (
     <div>
       <label className="label text-sm font-semibold">
@@ -19,6 +21,8 @@ const FormInput = ({
         required={required}
         className="input input-bordered w-full"
         placeholder={placeholder}
+        value={value}
+        onChange={handleChange}
       />
     </div>
   );

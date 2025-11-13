@@ -1,9 +1,6 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Link } from "react-router";
 const ReviewTable = ({ review, handleDelete }) => {
-  const handleEdit = (id) => {
-    console.log(`Editing review ID: ${id}`);
-  };
-
   const formattedDate = new Date(review.submissionDate).toLocaleDateString(
     "en-US",
     {
@@ -50,13 +47,13 @@ const ReviewTable = ({ review, handleDelete }) => {
 
       {/* Edit Button */}
       <td>
-        <button
-          onClick={() => handleEdit(review._id)}
+        <Link
+          to={`/edit-review/${review._id}`}
           className="cursor-pointer text-secondary hover:text-secondary-focus"
           title="Edit Review"
         >
           <FaEdit size={16} />
-        </button>
+        </Link>
       </td>
 
       {/* Delete Button */}

@@ -48,6 +48,8 @@ export const router = createBrowserRouter([
             <EditReview />
           </ProtectedRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/reviews/${params.id}`),
       },
       {
         path: "/my-favorites",

@@ -23,17 +23,6 @@ const AddReview = () => {
     const location = e.target.location.value;
     const reviewText = e.target.reviewText.value;
 
-    // console.log(
-    //   "Submitting Review:",
-    //   foodName,
-    //   foodImage,
-    //   restaurantName,
-    //   location,
-    //   rating,
-    //   reviewText,
-    //   submissionDate
-    // );
-
     const newReview = {
       foodName,
       foodImage,

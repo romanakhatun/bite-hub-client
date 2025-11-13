@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReviewCard from "../../components/ReviewCard";
 import useAxios from "../../hooks/useAxios";
+import { Link } from "react-router";
 
 const FeaturedReviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -20,7 +21,7 @@ const FeaturedReviews = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mb-7">
         <h2 className="section-heading font-garamond text-primary">
           Featured Reviews
         </h2>
@@ -35,6 +36,11 @@ const FeaturedReviews = () => {
             <ReviewCard review={review} key={index} />
           ))}
         </div>
+      </div>
+      <div className="flex justify-center">
+        <Link to="/all-reviews" className="btn-primary px-7 py-2">
+          View All
+        </Link>
       </div>
     </section>
   );
